@@ -1,13 +1,19 @@
-<div class="container">
-
-  <div>
-    <h1><strong> <%= @cocktail.name %> </strong></h1>
-    <h3>Ingredients</h3>
-      <ol>
-      <% @cocktail.ingredients.each do |ingredient| %>
-        <h4><li><%= ingredient.name %></li></h4>
-      <% end %>
-      </ol>
+<div class="container-fluid mt-5">
+  <div class="row justify-content-around">
+    <div  class=" col-4 p-5">
+      <h1><strong> <%= @cocktail.name %> </strong></h1>
+      <h3>Ingredients</h3>
+        <ol>
+        <% @cocktail.doses.each do |dose| %>
+          <h4><li><%= dose.ingredient.name %> - <%= dose.description %></li></h4>
+        <% end %>
+        </ol>
+    </div>
   </div>
-  <h3><%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary m-3" %></h3>
 </div>
+<div class="align-bottom text-center">
+  <%= link_to ('<i class="fas fa-plus"></i> Add an ingredient').html_safe, new_cocktail_dose_path(@cocktail), class: "btn btn-dark m-3" %>
+  <%= link_to ('<i class="fas fa-trash"></i> Delete a cocktail').html_safe, cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-light" %>
+</div>
+
+

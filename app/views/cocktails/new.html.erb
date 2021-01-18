@@ -1,7 +1,13 @@
-<div class="container">
-  <h1><strong>Add a new cocktail</strong>!</h1>
-    <%= simple_form_for [@cocktail] do |f| %>
-     <%= f.input :name, label: "Name of your cocktail"%>
-     <%= f.submit "Add", class: "btn btn-dark"%>
-    <% end %>
+<div class="container-fluid mt-5">
+  <div class="row justify-content-around">
+    <div  class=" col-5 p-5">
+      <div class="container">
+        <h1><strong>Add a new cocktail</strong></h1>
+          <%= simple_form_for [@cocktail] do |f| %>
+           <%= f.input :name, label: "Name of the cocktail"%>
+           <%= f.submit "Add", class: "btn btn-dark"%>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,16 +1,22 @@
-<div class="container">
+<div class="home-banner">
+  <h1>Discover the world of drinks</h1>
+  <h2><strong>or share your recipe</strong></h2>
+  <br>
+  <%= link_to "Add a cocktail", new_cocktail_path, class:"btn btn-light m-3" %>
+</div>
 
-  <div>
-    <h1><strong>Discover all cocktails or add a new one</strong></h1>
-    <%= link_to "Add a new cocktail", new_cocktail_path, class:"btn btn-dark m-3" %>
-  </div>
 
-  <div class="cards display-grid mb-3">
+
+<div class="container-fluid mt-5">
+  <div class="row justify-content-around">
     <h2>Life is better with a good cocktail. Choose yours!</h2>
-    <div class="card">
+    <div class="container">
+      <div  class="cards display-grid mb-3">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail.name, cocktail_path(cocktail) %>
       <% end %>
     </div>
-  </div>
+    </div>
+ </div>
 </div>
+
