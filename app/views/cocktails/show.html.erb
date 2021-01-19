@@ -1,19 +1,24 @@
 <div class="container-fluid mt-5">
   <div class="row justify-content-around">
-    <div  class=" col-4 p-5">
+    <div>
+      <i><%= cl_image_tag("barthekeserious_duprdv", width: 970, height: 250, crop: :fill) %></i>
+    </div>
+    <div  class="col-5 p-5">
       <h1><strong> <%= @cocktail.name %> </strong></h1>
       <h3>Ingredients</h3>
-        <ol>
+      <ol>
         <% @cocktail.doses.each do |dose| %>
           <h4><li><%= dose.ingredient.name %> - <%= dose.description %></li></h4>
         <% end %>
-        </ol>
+      </ol>
+    </div>
+    <div  class="col-5 p-5">
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
   </div>
 </div>
+
 <div class="align-bottom text-center">
   <%= link_to ('<i class="fas fa-plus"></i> Add an ingredient').html_safe, new_cocktail_dose_path(@cocktail), class: "btn btn-dark m-3" %>
   <%= link_to ('<i class="fas fa-trash"></i> Delete a cocktail').html_safe, cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-light" %>
 </div>
-
-
