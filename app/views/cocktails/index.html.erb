@@ -5,14 +5,12 @@
   <%= link_to "Add a cocktail", new_cocktail_path, class:"btn btn-light m-3" %>
 </div>
 
-
-
 <div class="container-fluid mt-5">
-  <div class="row justify-content-around">
-    <h2>Life is better with a good cocktail. Choose yours!</h2>
+  <div class="row justify-content-center">
+    <h2 style="text-align: center">Life is better with a good cocktail. Choose yours!</h2>
   </div>
   <br>
-    <div  class="cards display-grid mb-3">
+    <div class="cards display-grid mb-3">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>
           <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">

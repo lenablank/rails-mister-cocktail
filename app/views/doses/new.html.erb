@@ -1,9 +1,15 @@
+<div class="cocktails-banner">
+</div>
+
 <div class="container-fluid mt-5">
+<div class="row justify-content-center">
+  <h1 style="text-align: center"><strong> <%= @cocktail.name %> </strong></h1>
+</div>
+</div>
+
   <div class="row justify-content-around">
-    <div>
-      <i><%= cl_image_tag("barthekeserious_duprdv",width: 970, height: 250, crop: :fill) %></i>
-    </div>
-      <div  class="col-5 p-5">
+    <div  class="container-fluid mt-5">
+      <div class="row">
         <div class="container">
           <%= simple_form_for [@cocktail, @dose] do |f| -%>
             <%= f.input :description %>

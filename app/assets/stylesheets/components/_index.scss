@@ -4,11 +4,17 @@
 @import "navbar";
 @import "banner";
 @import "card";
+@import "cocktails_banner";
+@import "card_show";
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.h2 {
+  text-align: center;
 }
 
 // Smallest device
