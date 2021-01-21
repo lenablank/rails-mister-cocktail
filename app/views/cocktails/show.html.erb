@@ -9,17 +9,17 @@
     <%= link_to ('<i class="fas fa-plus"></i> Add an ingredient').html_safe, new_cocktail_dose_path(@cocktail), class: "btn btn-dark m-3" %>
     <%= link_to ('<i class="fas fa-trash"></i> Delete a cocktail').html_safe, cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-light" %>
   </div>
-  <br>
-    <h3>Ingredients</h3>
-    <br>
-    <div class="cards display-grid mb-3">
-      <ol>
-        <% @cocktail.doses.each do |dose| %>
-          <h5><li><%= dose.ingredient.name %> - <%= dose.description %></li></h5>
-        <% end %>
-      </ol>
-    <div>
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-    </div>
+</div>
+<br>
+<div class="row justify-content-around">
+  <div class="d-inline-flex p-2">
+    <ol>
+      <% @cocktail.doses.each do |dose| %>
+        <h5><li><%= dose.ingredient.name %> - <%= dose.description %></li></h5>
+      <% end %>
+    </ol>
+  </div>
+  <div class="d-inline-flex p-2">
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
 </div>
