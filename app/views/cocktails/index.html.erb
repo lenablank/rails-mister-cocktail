@@ -13,10 +13,17 @@
     <div class="cards display-grid mb-3">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>
+        <% if cocktail.photo.attached? %>
           <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">
             <h2><%= cocktail.name %></h2>
           </div>
+        <% else  %>
+          <div class="card" style="background-image: url('<%= image_path('whitecocktail')%>')">
+              <h2><%= cocktail.name %></h2>
+          </div>
+        <% end %>
         <% end %>
       <% end %>
     </div>
 </div>
+
