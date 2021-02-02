@@ -11,8 +11,11 @@
   border-style: none;
 }
 
-.card a:hover {
-  opacity: 10;
-  text-decoration: none;
+.card:hover {
+  opacity: 0.8;
+  transform: translate(0.4%);
 }
 
+a {
+   text-decoration: none !important
+}

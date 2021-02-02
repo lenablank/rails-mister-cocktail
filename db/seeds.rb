@@ -10,12 +10,9 @@ require 'open-uri'
 Dose.destroy_all
 Ingredient.destroy_all
 
-
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients = JSON.parse(open(url).read)
 ingredients['drinks'].each do |ing|
   i = Ingredient.create(name: ing["strIngredient1"])
   puts "created #{i.name}"
 end
-
-
