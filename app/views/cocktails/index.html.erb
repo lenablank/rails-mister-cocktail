@@ -9,15 +9,25 @@
   <div class="row justify-content-center">
     <h2 style="text-align: center">Life is better with a good cocktail. Choose yours!</h2>
   </div>
-  <br>
-    <div class="cards display-grid mb-3">
-      <% @cocktails.each do |cocktail| %>
-        <%= link_to cocktail_path(cocktail) do %>
-          <div class="card" style="background-image: url('<%= image_path('whitecocktail.jpg')%>')">
-              <h2><%= cocktail.name %></h2>
-          </div>
-        <% end %>
-      <% end %>
+  <div  class="row justify-content-center">
+    <div class="col-sm-6">
+      <%= form_tag cocktails_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Which cocktail?"
+      %>
+    <% end %>
     </div>
+  </div>
+  <br>
+  <div class="cards display-grid mb-3">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="card" style="background-image: url('<%= image_path('whitecocktail.jpg')%>')">
+        <h2><%= cocktail.name %></h2>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-
