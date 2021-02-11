@@ -6,7 +6,7 @@
       <div class="row">
         <div class="container">
           <h1><strong>Add a new cocktail</strong></h1>
-            <%= simple_form_for(@cocktail) do |f| %>
+            <%= simple_form_for @cocktail do |f| %>
               <%= f.input :name, label: "Name of the cocktail"%>
               <%= f.input :photo, as: :file %>
               <%= f.submit "Add", class: "btn btn-dark"%>
